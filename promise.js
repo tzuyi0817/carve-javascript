@@ -6,7 +6,12 @@ class PrivatePromise {
   constructor (fun) {
     this.PromiseState = PrivatePromise.pending;
     this.PromiseResult = null;
-    fun(() => this.resolve, () => this.reject);
+
+    try {
+      fun((result) => this.resolve(result), this.reject.bind(this));
+    } catch (error) {
+      this.reject(error);
+    }
   }
 
   resolve(result) {
@@ -22,10 +27,45 @@ class PrivatePromise {
       this.PromiseResult = reason;
     }
   }
+
+  then(onFulfilled, onRejected) {
+    switch (this.PromiseState) {
+      case "fulfilled":
+        onFulfilled(this.PromiseResult);
+        break;
+      case "rejected":
+        onRejected(this.PromiseResult);
+        break;
+    }
+  }
 };
 
 const promise = new PrivatePromise((resolve, reject) => {
   resolve("123");
 });
 
-console.log(promise);
+const promise1 = new PrivatePromise((resolve, reject) => {
+  reject("456");
+});
+
+const promise2 = new PrivatePromise((resolve, reject) => {
+  throw new Error('throw error');
+});
+
+promise.then(result => {
+  console.log(result);
+}, reason => {
+  console.log(reason);
+});
+
+promise1.then(
+  undefined,
+  reason => {
+  console.log(reason);
+});
+
+promise2.then(
+  undefined,
+  reason => {
+  console.log(reason);
+});
