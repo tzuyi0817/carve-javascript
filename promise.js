@@ -34,21 +34,31 @@ class PrivatePromise {
 
     switch (this.PromiseState) {
       case "fulfilled":
-        onFulfilled(this.PromiseResult);
+        setTimeout(() => {
+          onFulfilled(this.PromiseResult);
+        });
         break;
       case "rejected":
-        onRejected(this.PromiseResult);
+        setTimeout(() => {
+          onRejected(this.PromiseResult);
+        });
         break;
     }
   }
 };
 
+console.log("start");
+
 const promise = new PrivatePromise((resolve, reject) => {
+  console.log("promise")
   resolve("123");
 });
 
-promise.then(
-  undefined,
-  reason => {
-    console.log(reason);
+
+promise.then(result => {
+  console.log(result);
+}, reason => {
+  console.log(reason);
 });
+
+console.log("end");
