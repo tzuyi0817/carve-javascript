@@ -6,6 +6,8 @@ class PrivatePromise {
   constructor (fun) {
     this.PromiseState = PrivatePromise.pending;
     this.PromiseResult = null;
+    this.onFulfilledCallback = [];
+    this.onRejectedCallback = [];
 
     try {
       fun((result) => this.resolve(result), this.reject.bind(this));
@@ -16,15 +18,21 @@ class PrivatePromise {
 
   resolve(result) {
     if (this.PromiseState === PrivatePromise.pending) {
-      this.PromiseState = PrivatePromise.fulfilled;
-      this.PromiseResult = result;
+      setTimeout(() => {
+        this.PromiseState = PrivatePromise.fulfilled;
+        this.PromiseResult = result;
+        this.onFulfilledCallback.forEach(onFulfilled => onFulfilled(result));
+      });
     }
   }
 
   reject(reason) {
     if (this.PromiseState === PrivatePromise.pending) {
-      this.PromiseState = PrivatePromise.rejected;
-      this.PromiseResult = reason;
+      setTimeout(() => {
+        this.PromiseState = PrivatePromise.rejected;
+        this.PromiseResult = reason;
+        this.onRejectedCallback.forEach(onRejected => onRejected(reason));
+      });
     }
   }
 
@@ -33,6 +41,10 @@ class PrivatePromise {
     typeof onRejected !== "function" && (onRejected = (reason) => { throw reason });
 
     switch (this.PromiseState) {
+      case "pending":
+        this.onFulfilledCallback.push(onFulfilled);
+        this.onRejectedCallback.push(onRejected);
+        break;
       case "fulfilled":
         setTimeout(() => {
           onFulfilled(this.PromiseResult);
@@ -51,7 +63,10 @@ console.log("start");
 
 const promise = new PrivatePromise((resolve, reject) => {
   console.log("promise")
-  resolve("123");
+  setTimeout(() => {
+    resolve("123");
+    console.log("setTimeout");
+  })
 });
 
 
