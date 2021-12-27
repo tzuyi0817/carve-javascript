@@ -29,6 +29,9 @@ class PrivatePromise {
   }
 
   then(onFulfilled, onRejected) {
+    typeof onFulfilled !== "function" && (onFulfilled = (value) => value);
+    typeof onRejected !== "function" && (onRejected = (reason) => { throw reason });
+
     switch (this.PromiseState) {
       case "fulfilled":
         onFulfilled(this.PromiseResult);
@@ -44,28 +47,8 @@ const promise = new PrivatePromise((resolve, reject) => {
   resolve("123");
 });
 
-const promise1 = new PrivatePromise((resolve, reject) => {
-  reject("456");
-});
-
-const promise2 = new PrivatePromise((resolve, reject) => {
-  throw new Error('throw error');
-});
-
-promise.then(result => {
-  console.log(result);
-}, reason => {
-  console.log(reason);
-});
-
-promise1.then(
+promise.then(
   undefined,
   reason => {
-  console.log(reason);
-});
-
-promise2.then(
-  undefined,
-  reason => {
-  console.log(reason);
+    console.log(reason);
 });
