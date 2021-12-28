@@ -58,6 +58,8 @@ class PrivatePromise {
           break;
       }
     });
+
+    return callbackPromise;
   }
 };
 
@@ -90,7 +92,7 @@ function processPromise() {
   });
 };
 
-const promise = new Promise((resolve, reject) => {
+const promise = new PrivatePromise((resolve, reject) => {
   resolve("resolve")
 });
 
