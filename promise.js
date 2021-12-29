@@ -92,20 +92,20 @@ function processPromise() {
   });
 };
 
-const promise = new PrivatePromise((resolve, reject) => {
-  resolve("resolve")
-});
+// const promise = new PrivatePromise((resolve, reject) => {
+//   resolve("resolve")
+// });
 
-promise.then(value => {
-  console.log(value)
-  return value + "1";
-}).then(value => {
-  console.log(value)
-  return value + "2";
-}).then(value => {
-  console.log(value)
-  return value + "3";
-}).then(value => {
-  console.log(value)
-  return value + "4";
-})
+// promise.then(value => {
+//   console.log(value)
+//   return value + "1";
+// }).then(value => {
+//   console.log(value)
+//   return value + "2";
+// }).then(value => {
+//   console.log(value)
+//   return value + "3";
+// }).then(value => {
+//   console.log(value)
+//   return value + "4";
+// })
