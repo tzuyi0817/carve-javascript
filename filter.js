@@ -12,11 +12,11 @@ Array.prototype.privateFilter = function (callback, thisArg) {
   return result;
 }
 
-setTimeout(() => {
-  const filter = [1, 2, 3, 4].privateFilter((num, index, array) => {
-    console.log(num, index, array);
-    return num > 1;
-  });
+// setTimeout(() => {
+//   const filter = [1, 2, 3, 4].privateFilter((num, index, array) => {
+//     console.log(num, index, array);
+//     return num > 1;
+//   });
 
-  console.log(filter);
-})
+//   console.log(filter);
+// })
