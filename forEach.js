@@ -9,8 +9,8 @@ Array.prototype.privateForEach = function(callback, thisArg) {
   }
 }
 
-setTimeout(() => {
-  [1, 2, 3, 5].privateForEach((num, index, array) => {
-    console.log(num, index, array);
-  });
-})
+// setTimeout(() => {
+//   [1, 2, 3, 5].privateForEach((num, index, array) => {
+//     console.log(num, index, array);
+//   });
+// })
