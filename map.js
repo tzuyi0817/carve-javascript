@@ -6,16 +6,16 @@ Array.prototype.privateMap = function(callback, thisArg) {
   const result = [];
 
   for (let index = 0; index < array.length; index++) {
-    result[index] = callback.call(thisArg, array[index], index, array);
+    result.push(callback.call(thisArg, array[index], index, array));
   }
   return result;
 }
 
-setTimeout(() => {
-  const map = [1, 2, 3].privateMap((num, index, array) => {
-    console.log(num, index, array)
-    return num * 2;
-  })
+// setTimeout(() => {
+//   const map = [1, 2, 3].privateMap((num, index, array) => {
+//     console.log(num, index, array)
+//     return num * 2;
+//   })
 
-  console.log(map);
-})
+//   console.log(map);
+// })
