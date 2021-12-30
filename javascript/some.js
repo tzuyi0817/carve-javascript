@@ -12,11 +12,11 @@ Array.prototype.privateSome = function (callback, thisArg) {
   return false;
 }
 
-setTimeout(() => {
-  const some = [1, 2, 3, 4].privateSome((num, index, array) => {
-    console.log(num, index, array);
-    return num > 2;
-  });
+// setTimeout(() => {
+//   const some = [1, 2, 3, 4].privateSome((num, index, array) => {
+//     console.log(num, index, array);
+//     return num > 2;
+//   });
 
-  console.log(some);
-})
+//   console.log(some);
+// })
