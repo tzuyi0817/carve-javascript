@@ -20,11 +20,11 @@ Array.prototype.privateReduce = function (callback, initialValue) {
   return accumulator;
 }
 
-setTimeout(() => {
-  const reduce = [15, 5, 5, 6].privateReduce((accumulator, currentValue, currentIndex, array) => {
-    console.log(accumulator, currentValue, currentIndex, array);
-    return accumulator + currentValue;
-  }, 10)
+// setTimeout(() => {
+//   const reduce = [15, 5, 5, 6].privateReduce((accumulator, currentValue, currentIndex, array) => {
+//     console.log(accumulator, currentValue, currentIndex, array);
+//     return accumulator + currentValue;
+//   }, 10)
 
-  console.log(reduce);
-})
+//   console.log(reduce);
+// })
