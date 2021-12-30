@@ -16,8 +16,8 @@ Array.prototype.privateIncludes = function (searchElement, fromIndex) {
   return false;
 }
 
-setTimeout(() => {
-  const includes = [1, 2, 3].privateIncludes(2, -1);
+// setTimeout(() => {
+//   const includes = [1, 2, 3].privateIncludes(2, -1);
 
-  console.log(includes);
-})
+//   console.log(includes);
+// })
