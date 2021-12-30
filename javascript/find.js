@@ -12,17 +12,17 @@ Array.prototype.privateFind = function (callback, thisArg) {
   return undefined;
 }
 
-setTimeout(() => {
-  const find = [
-    { id: 1, num: 5 },
-    { id: 2, num: 12 },
-    { id: 3, num: 8 },
-    { id: 4, num: 130 },
-    { id: 5, num: 44 },
-  ].privateFind((item, index, array) => {
-    console.log(item, index, array);
-    return item.num > 130;
-  });
+// setTimeout(() => {
+//   const find = [
+//     { id: 1, num: 5 },
+//     { id: 2, num: 12 },
+//     { id: 3, num: 8 },
+//     { id: 4, num: 130 },
+//     { id: 5, num: 44 },
+//   ].privateFind((item, index, array) => {
+//     console.log(item, index, array);
+//     return item.num > 130;
+//   });
 
-  console.log(find);
-})
+//   console.log(find);
+// })

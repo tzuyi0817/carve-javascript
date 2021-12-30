@@ -7,3 +7,4 @@ import "./map.js";
 import "./reduce.js";
 import "./some.js";
 import "./find.js";
+import "./includes.js";
