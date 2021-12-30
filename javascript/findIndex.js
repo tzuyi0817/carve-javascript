@@ -12,11 +12,11 @@ Array.prototype.privateFindIndex = function (callback, thisArg) {
   return -1;
 }
 
-setTimeout(() => {
-  const findIndex = [5, 12, 8, 130, 44].privateFindIndex((num, index, array) => {
-    console.log(num, index, array);
-    return num > 13;
-  });
+// setTimeout(() => {
+//   const findIndex = [5, 12, 8, 130, 44].privateFindIndex((num, index, array) => {
+//     console.log(num, index, array);
+//     return num > 13;
+//   });
 
-  console.log(findIndex);
-})
+//   console.log(findIndex);
+// })

@@ -9,3 +9,4 @@ import "./some.js";
 import "./find.js";
 import "./includes.js";
 import "./findIndex.js";
+import "./indexOf.js";
