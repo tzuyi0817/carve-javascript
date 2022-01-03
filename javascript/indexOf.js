@@ -33,10 +33,10 @@ String.prototype.privateIndexOf = function (searchElement, fromIndex) {
   return -1;
 }
 
-setTimeout(() => {
-  const indexOfArray = ['ant', 'bison', 'camel', 'duck', 'bison'].privateIndexOf('bison', -2);
-  const indexOfString = "The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?".privateIndexOf("dog", -30);
+// setTimeout(() => {
+//   const indexOfArray = ['ant', 'bison', 'camel', 'duck', 'bison'].privateIndexOf('bison', -2);
+//   const indexOfString = "The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?".privateIndexOf("dog", -30);
 
-  console.log(indexOfArray);
-  console.log(indexOfString);
-})
+//   console.log(indexOfArray);
+//   console.log(indexOfString);
+// })
