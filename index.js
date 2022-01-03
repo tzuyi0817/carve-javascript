@@ -1,4 +1,5 @@
 import "./function/call.js"
+import "./function/apply.js"
 
 import "./javascript/promise.js";
 import "./javascript/every.js";
