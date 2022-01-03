@@ -1,9 +1,14 @@
 Function.prototype.privateCall = function (thisArg, ...args) {
+  if (typeof this !== "function") {
+    throw new TypeError("Function.prototype.call - what is trying to be bound is not callable");
+  }
+
   thisArg = thisArg ?? window;
-  thisArg.fn = this;
+  const fn = Symbol();
+  thisArg[fn] = this;
   
-  const result = thisArg.fn(...args);
-  delete thisArg.fn;
+  const result = thisArg[fn](...args);
+  delete thisArg[fn];
   return result;
 }
 
