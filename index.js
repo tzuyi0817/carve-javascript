@@ -13,3 +13,5 @@ import "./javascript/find.js";
 import "./javascript/includes.js";
 import "./javascript/findIndex.js";
 import "./javascript/indexOf.js";
+
+import "./Object/create.js";

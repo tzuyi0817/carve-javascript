@@ -12,25 +12,25 @@ Function.prototype.privateBind = function (thisArg, ...args) {
   return result;
 }
 
-setTimeout(() => {
-  function Point(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
+// setTimeout(() => {
+//   function Point(x, y, z) {
+//     this.x = x;
+//     this.y = y;
+//     this.z = z;
+//   }
   
-  Point.prototype.toString = function() {
-    return `${this.x}, ${this.y}, ${this.z}`;
-  };
+//   Point.prototype.toString = function() {
+//     return `${this.x}, ${this.y}, ${this.z}`;
+//   };
   
-  const p = new Point(1, 2, 3);
-  console.log(p.toString()); // '1, 2, 3'
+//   const p = new Point(1, 2, 3);
+//   console.log(p.toString()); // '1, 2, 3'
   
-  const YAxisPoint = Point.privateBind(null, 0);
-  console.log(YAxisPoint)
-  const axisPoint = new YAxisPoint(9, 5);
-  console.log(axisPoint.toString()); // '0, 9, 5'
-  console.log(axisPoint instanceof Point); // true
-  console.log(axisPoint instanceof YAxisPoint); // true
-  console.log(new Point(17, 42) instanceof YAxisPoint); // true
-})
+//   const YAxisPoint = Point.privateBind(null, 0);
+
+//   const axisPoint = new YAxisPoint(9, 5);
+//   console.log(axisPoint.toString()); // '0, 9, 5'
+//   console.log(axisPoint instanceof Point); // true
+//   console.log(axisPoint instanceof YAxisPoint); // true
+//   console.log(new Point(17, 42) instanceof YAxisPoint); // true
+// })
