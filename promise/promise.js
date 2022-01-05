@@ -1,4 +1,4 @@
-class PrivatePromise {
+export default class PrivatePromise {
   static pending = "pending";
   static fulfilled = "fulfilled";
   static rejected = "rejected";

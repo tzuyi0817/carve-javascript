@@ -2,7 +2,6 @@ import "./function/call.js";
 import "./function/apply.js";
 import "./function/bind.js";
 
-import "./javascript/promise.js";
 import "./javascript/every.js";
 import "./javascript/filter.js";
 import "./javascript/forEach.js";
@@ -14,4 +13,7 @@ import "./javascript/includes.js";
 import "./javascript/findIndex.js";
 import "./javascript/indexOf.js";
 
-import "./Object/create.js";
+import "./promise/promise.js";
+import "./promise/resolve.js";
+
+import "./object/create.js";
