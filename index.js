@@ -17,5 +17,6 @@ import "./promise/promise.js";
 import "./promise/resolve.js";
 import "./promise/reject.js";
 import "./promise/all.js";
+import "./promise/race.js";
 
 import "./object/create.js";
