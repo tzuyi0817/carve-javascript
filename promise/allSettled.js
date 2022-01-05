@@ -22,20 +22,20 @@ PrivatePromise.allSettled = function (iterable) {
   });
 }
 
-setTimeout(async () => {
-  PrivatePromise.allSettled([
-    PrivatePromise.resolve(33),
-    new PrivatePromise(resolve => setTimeout(() => resolve(66), 0)),
-    99,
-    PrivatePromise.reject(new Error('an error'))
-  ])
-  .then(values => console.log(values));
+// setTimeout(async () => {
+//   PrivatePromise.allSettled([
+//     PrivatePromise.resolve(33),
+//     new PrivatePromise(resolve => setTimeout(() => resolve(66), 0)),
+//     99,
+//     PrivatePromise.reject(new Error('an error'))
+//   ])
+//   .then(values => console.log(values));
   
-  const values = await PrivatePromise.allSettled([
-    PrivatePromise.resolve(11),
-    new PrivatePromise(resolve => setTimeout(() => resolve(22), 0)),
-    33,
-    PrivatePromise.reject(new Error('an error'))
-  ])
-  console.log(values)
-})
+//   const values = await PrivatePromise.allSettled([
+//     PrivatePromise.resolve(11),
+//     new PrivatePromise(resolve => setTimeout(() => resolve(22), 0)),
+//     33,
+//     PrivatePromise.reject(new Error('an error'))
+//   ])
+//   console.log(values)
+// })
