@@ -8,15 +8,15 @@ PrivatePromise.resolve = function (value) {
   return new PrivatePromise(resolve => resolve(value));
 }
 
-setTimeout(() => {
-  PrivatePromise.resolve('Success').then((value) => {
-    console.log(value);
-  });
+// setTimeout(() => {
+//   PrivatePromise.resolve('Success').then((value) => {
+//     console.log(value);
+//   });
 
-  var original = PrivatePromise.resolve(33);
-  var cast = PrivatePromise.resolve(original);
-  cast.then((value) => {
-    console.log('value: ' + value);
-  });
-  console.log('original === cast ? ' + (original === cast));
-})
+//   var original = PrivatePromise.resolve(33);
+//   var cast = PrivatePromise.resolve(original);
+//   cast.then((value) => {
+//     console.log('value: ' + value);
+//   });
+//   console.log('original === cast ? ' + (original === cast));
+// })

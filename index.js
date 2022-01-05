@@ -15,5 +15,6 @@ import "./javascript/indexOf.js";
 
 import "./promise/promise.js";
 import "./promise/resolve.js";
+import "./promise/reject.js";
 
 import "./object/create.js";
