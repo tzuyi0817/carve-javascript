@@ -15,26 +15,26 @@ PrivatePromise.any = function (iterable) {
   });
 }
 
-setTimeout(() => {
-  const pErr = new PrivatePromise((resolve, reject) => {
-    reject("Always fails");
-  });
-  const pSlow = new PrivatePromise((resolve, reject) => {
-    setTimeout(resolve, 500, "Done eventually");
-  });
-  const pFast = new PrivatePromise((resolve, reject) => {
-    setTimeout(resolve, 100, "Done quick");
-  });
+// setTimeout(() => {
+//   const pErr = new PrivatePromise((resolve, reject) => {
+//     reject("Always fails");
+//   });
+//   const pSlow = new PrivatePromise((resolve, reject) => {
+//     setTimeout(resolve, 500, "Done eventually");
+//   });
+//   const pFast = new PrivatePromise((resolve, reject) => {
+//     setTimeout(resolve, 100, "Done quick");
+//   });
   
-  PrivatePromise.any([pErr, pSlow, pFast]).then((value) => {
-    console.log(value);
-  })
+//   PrivatePromise.any([pErr, pSlow, pFast]).then((value) => {
+//     console.log(value);
+//   })
 
-  const aErr = new Promise((resolve, reject) => {
-    reject('Always fails');
-  });
+//   const aErr = new Promise((resolve, reject) => {
+//     reject('Always fails');
+//   });
   
-  Promise.any([aErr]).then((value) => {
-    console.log(value);
-  })
-})
+//   Promise.any([aErr]).then((value) => {
+//     console.log(value);
+//   })
+// })

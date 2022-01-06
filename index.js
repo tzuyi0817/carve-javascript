@@ -12,6 +12,7 @@ import "./javascript/find.js";
 import "./javascript/includes.js";
 import "./javascript/findIndex.js";
 import "./javascript/indexOf.js";
+import "./javascript/push.js";
 
 import "./promise/promise.js";
 import "./promise/resolve.js";
