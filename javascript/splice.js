@@ -1,21 +1,21 @@
-Array.prototype.privateSplice = function (start, deleteCount, ...args) {
+Array.prototype.privateSplice = function (fromIndex, deleteCount, ...args) {
   const array = Object(this);
   const length = array.length;
   const firstHalf = [];
   const lastHalf = [];
   const result = [];
 
-  start = start | 0;
-  if (start < 0) start = length + start;
-  start = Math.max(start, 0);
+  fromIndex = fromIndex | 0;
+  if (fromIndex < 0) fromIndex = length + fromIndex;
+  fromIndex = Math.max(fromIndex, 0);
   deleteCount = deleteCount ?? length;
 
   for (let index = 0; index < length; index++) {
     const value = array[index];
 
-    if (index < start) firstHalf.push(value);
+    if (index < fromIndex) firstHalf.push(value);
     else {
-      index <= (start + deleteCount - 1) ? result.push(value) : lastHalf.push(value);
+      index <= (fromIndex + deleteCount - 1) ? result.push(value) : lastHalf.push(value);
     }
   }
 
@@ -26,7 +26,7 @@ Array.prototype.privateSplice = function (start, deleteCount, ...args) {
 
 setTimeout(() => {
   const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-  const removed = myFish.privateSplice(-2, 2, 'parrot', 'anemone', 'blue');
+  const removed = myFish.privateSplice(0, 2, 'parrot', 'anemone', 'blue');
 
   console.log(myFish);
   console.log(removed);
