@@ -7,15 +7,15 @@ Array.prototype.privatePush = function (...args) {
   return array.length;
 }
 
-setTimeout(() => {
-  const animals = ['pigs', 'goats', 'sheep'];
+// setTimeout(() => {
+//   const animals = ['pigs', 'goats', 'sheep'];
 
-  const count = animals.privatePush('cows');
-  console.log(count);
-  console.log(animals);
+//   const count = animals.privatePush('cows');
+//   console.log(count);
+//   console.log(animals);
 
-  animals.privatePush('chickens', 'cats', 'dogs');
-  console.log(animals);
+//   animals.privatePush('chickens', 'cats', 'dogs');
+//   console.log(animals);
 
-  null.privatePush(1);
-})
+//   null.privatePush(1);
+// })
