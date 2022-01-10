@@ -24,10 +24,10 @@ Array.prototype.privateSplice = function (fromIndex, deleteCount, ...args) {
   return result;
 }
 
-setTimeout(() => {
-  const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-  const removed = myFish.privateSplice(0, 2, 'parrot', 'anemone', 'blue');
+// setTimeout(() => {
+//   const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+//   const removed = myFish.privateSplice(0, 2, 'parrot', 'anemone', 'blue');
 
-  console.log(myFish);
-  console.log(removed);
-})
+//   console.log(myFish);
+//   console.log(removed);
+// })

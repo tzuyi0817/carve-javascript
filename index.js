@@ -14,6 +14,7 @@ import "./javascript/findIndex.js";
 import "./javascript/indexOf.js";
 import "./javascript/push.js";
 import "./javascript/splice.js";
+import "./javascript/sort.js";
 
 import "./promise/promise.js";
 import "./promise/resolve.js";
