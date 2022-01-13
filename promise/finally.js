@@ -7,10 +7,9 @@ PrivatePromise.prototype.finally = function (callback) {
   );
 }
 
-setTimeout(() => {
-  console.log(PrivatePromise.resolve(1))
-  PrivatePromise
-    .resolve(1)
-    .finally(val => console.log(val)) // undefined
-    .then(val => console.log(val)) // 1
-})
+// setTimeout(() => {
+//   PrivatePromise
+//     .resolve(1)
+//     .finally(val => console.log(val)) // undefined
+//     .then(val => console.log(val)) // 1
+// })

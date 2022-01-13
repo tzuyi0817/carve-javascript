@@ -20,6 +20,7 @@ import "./promise/promise.js";
 import "./promise/resolve.js";
 import "./promise/reject.js";
 import "./promise/finally.js";
+import "./promise/catch.js";
 import "./promise/all.js";
 import "./promise/race.js";
 import "./promise/allSettled.js";
