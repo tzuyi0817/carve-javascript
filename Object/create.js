@@ -7,7 +7,11 @@ Object.privateCreate = function (proto, propertiesObject) {
   F.prototype = proto;
   const result = new F();
 
-  propertiesObject !== undefined && Object.defineProperties(result, propertiesObject);
+  if (propertiesObject) {
+    if (typeof propertiesObject !== "object") throw new TypeError(`properties may only be an Object: ${propertiesObject}`);
+    Object.defineProperties(result, propertiesObject);
+  }
+
   proto === null && Object.setPrototypeOf(result, null);
   return result;
 }

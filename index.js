@@ -28,3 +28,4 @@ import "./promise/allSettled.js";
 import "./promise/any.js";
 
 import "./object/create.js";
+import "./object/is.js";

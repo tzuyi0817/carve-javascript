@@ -15,12 +15,12 @@ Array.prototype.privateSlice = function (begin = 0, end = this.length) {
   return result;
 }
 
-setTimeout(() => {
-  const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+// setTimeout(() => {
+//   const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 
-  console.log(animals.privateSlice(2)); // ["camel", "duck", "elephant"]
-  console.log(animals.privateSlice(2, 4)); // ["camel", "duck"]
-  console.log(animals.privateSlice(1, 8)); // ["bison", "camel", "duck", "elephant"]
-  console.log(animals.privateSlice(-2)); // ["duck", "elephant"]
-  console.log(animals.privateSlice(2, -1)); // ["camel", "duck"]
-})
+//   console.log(animals.privateSlice(2)); // ["camel", "duck", "elephant"]
+//   console.log(animals.privateSlice(2, 4)); // ["camel", "duck"]
+//   console.log(animals.privateSlice(1, 8)); // ["bison", "camel", "duck", "elephant"]
+//   console.log(animals.privateSlice(-2)); // ["duck", "elephant"]
+//   console.log(animals.privateSlice(2, -1)); // ["camel", "duck"]
+// })
